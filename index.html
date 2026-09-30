@@ -1,0 +1,116 @@
+<!doctype html>
+<html lang="tr"><head><meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1">
+<meta name="description" content="Codex için yapay zekâ orkestrası: GPT-6.1 Sol şef, uzman ajanlar ve bağımsız denetçi.">
+<title>Codex Yapay Zekâ Orkestrası</title>
+<style>
+:root{--bg:#f5f1e9;--ink:#142235;--panel:#fffdfa;--line:#c9cbc5;--muted:#576470;--accent:#fa704a;--mint:#cdece0}
+@media(prefers-color-scheme:dark){:root{--bg:#101822;--ink:#f1f3f0;--panel:#1b2936;--line:#43515d;--muted:#b8c1c6;--accent:#ff9977;--mint:#28564b}}
+*{box-sizing:border-box}html{scroll-behavior:smooth}body{margin:0;background:var(--bg);color:var(--ink);font:17px/1.6 system-ui,sans-serif}a{color:inherit}a:hover{color:var(--accent)}.wrap{max-width:1100px;margin:auto;padding:0 24px}.hero{background:#142235;color:#f5f1e9;padding:25px 0 85px}.nav{display:flex;justify-content:space-between;gap:20px;flex-wrap:wrap;font-size:14px}.nav b{letter-spacing:.12em;text-transform:uppercase}.nav span{display:flex;gap:18px;flex-wrap:wrap}.nav a{text-decoration:none}.hero-main{display:grid;grid-template-columns:1.3fr .7fr;gap:30px;align-items:end;padding-top:90px}.eyebrow,.num{color:var(--accent);font:800 13px ui-monospace,monospace;letter-spacing:.12em;text-transform:uppercase}h1{font-size:clamp(3.5rem,8vw,7rem);line-height:.94;letter-spacing:-.075em;margin:12px 0 24px}.lead{font-size:1.35rem;max-width:600px}.hero aside{border:1px solid #aab5bd;padding:26px;font-size:1.1rem}.hero aside strong{display:block;font-size:2rem;line-height:1.1;margin-bottom:18px}.cta{display:inline-block;background:var(--accent);color:#142235;padding:12px 20px;margin-top:15px;text-decoration:none;font-weight:800;border-radius:4px}section{padding:75px 0;border-bottom:1px solid var(--line)}h2{font-size:clamp(2.2rem,5vw,3.7rem);line-height:1.05;letter-spacing:-.05em;margin:8px 0 20px}h3{font-size:1.32rem;line-height:1.2;margin:0}.intro{max-width:760px;color:var(--muted);font-size:1.1rem;margin:0 0 30px}.cards,.cols{display:grid;grid-template-columns:repeat(2,minmax(0,1fr));gap:16px}.card,.box{background:var(--panel);border:1px solid var(--line);padding:24px}.card{display:flex;flex-direction:column;min-height:178px}.card p{flex:1}.card small{color:var(--muted);font-family:ui-monospace,monospace}.model{font:700 13px ui-monospace,monospace;background:var(--mint);padding:5px 8px;align-self:flex-start;margin-top:12px}.flow{display:grid;grid-template-columns:repeat(4,1fr);gap:13px;counter-reset:flow}.flow article{background:var(--panel);padding:20px;border-top:4px solid var(--accent)}.flow article:before{counter-increment:flow;content:'0' counter(flow);display:block;color:var(--accent);font:900 14px ui-monospace,monospace;margin-bottom:19px}.flow p{color:var(--muted);font-size:15px}.box h3{margin-bottom:15px}.box ul{margin:0;padding-left:21px}.box li+li{margin-top:10px}code,pre{font:13px/1.55 ui-monospace,monospace}pre{background:#142235;color:#eef3f4;padding:18px;overflow:auto;border-radius:3px}details{background:var(--panel);border:1px solid var(--line);margin:10px 0;padding:15px 20px}summary{cursor:pointer;font:700 16px ui-monospace,monospace}details pre{max-height:400px}button{border:1px solid var(--ink);background:transparent;color:var(--ink);padding:7px 12px;margin:15px 0 0;cursor:pointer;font:700 13px system-ui}button:hover{background:var(--accent);color:#142235}.note{padding:18px 22px;background:var(--mint);border-left:5px solid var(--accent);margin-top:20px}footer{padding:35px 0 55px;color:var(--muted);font-size:14px}footer p{margin:6px 0}:focus-visible{outline:3px solid var(--accent);outline-offset:3px}@media(max-width:760px){.hero-main,.cards,.cols{grid-template-columns:1fr}.flow{grid-template-columns:repeat(2,1fr)}.hero-main{padding-top:60px}}@media(max-width:460px){.flow{grid-template-columns:1fr}.wrap{padding:0 17px}section{padding:55px 0}}
+</style></head><body>
+<header class="hero"><div class="wrap"><nav class="nav"><b>Codex / Orkestra</b><span><a href="#kadro">Kadro</a><a href="#akis">İş akışı</a><a href="#kurulum">Kurulum</a><a href="#dosyalar">Ajan dosyaları</a></span></nav><div class="hero-main"><div><p class="eyebrow">GPT-6.1 Sol + GPT-6 Luna</p><h1>Bir şef.<br>Yedi uzman.<br>Tek sonuç.</h1><p class="lead">Büyük işi parçalara ayır. Her parçayı uygun modele ver. Bağımsız denetimden geçen sonucu şef birleştirsin.</p><a class="cta" href="#kurulum">Orkestrayı kur →</a></div><aside><strong>Şef yönetir.</strong>Codex ana oturumu brifleri yazar, alt ajanları görevlendirir, yapılan işi kontrol eder ve sonucu sana açıkça anlatır.</aside></div></div></header>
+<main><section id="kadro"><div class="wrap"><span class="num">01 / Kadro</span><h2>Hangi iş, hangi ajan?</h2><p class="intro">Şef GPT-6.1 Sol / medium. Dar ve tekrarlı işler GPT-6 Luna. Denetimde risk yükselirse ayrı Sol profili.</p><div class="cards"><article class="card"><h3>Şef</h3><b class="model">gpt-6.1-sol · medium</b><p>İşi böler, brif verir ve sonuçları birleştirir.</p><small>.codex/config.toml</small></article>
+<article class="card"><h3>Denetçi</h3><b class="model">gpt-6-luna · high</b><p>Başka ajanın işini bağımsız inceler.</p><small>denetci.toml</small></article>
+<article class="card"><h3>Riskli denetçi</h3><b class="model">gpt-6.1-sol · medium</b><p>Güvenlik, ödeme ve veri kaybı risklerini inceler.</p><small>denetci-riskli.toml</small></article>
+<article class="card"><h3>Geliştirici</h3><b class="model">gpt-6-luna · medium</b><p>Tarif edilmiş kod değişikliğini ve testleri yapar.</p><small>gelistirici.toml</small></article>
+<article class="card"><h3>Araştırmacı</h3><b class="model">gpt-6-luna · medium</b><p>Kaynaklı araştırma yapar; dosya değiştirmez.</p><small>arastirmaci.toml</small></article>
+<article class="card"><h3>Yükleyici</h3><b class="model">gpt-6-luna · low</b><p>Mekanik toplu dosya işlerini yürütür.</p><small>yukleyici.toml</small></article>
+<article class="card"><h3>Tasarımcı</h3><b class="model">gpt-6.1-sol · medium</b><p>Görsel çalışmaları üretir ve açıp denetler.</p><small>tasarimci.toml</small></article>
+<article class="card"><h3>Video üreticisi</h3><b class="model">gpt-6.1-sol · medium</b><p>Video ve sesi üretir, kareleri ve ses düzeyini doğrular.</p><small>video-ureticisi.toml</small></article></div></div></section>
+<section id="akis"><div class="wrap"><span class="num">02 / İş akışı</span><h2>Bir işin yolculuğu</h2><div class="flow"><article><h3>İsteği tanımla</h3><p>Hedef, kapsam ve bitti sayılma ölçütünü yaz.</p></article><article><h3>Brif ve model seç</h3><p>Dosya sınırlarını belirle, gerekliyse ajan çağır.</p></article><article><h3>Bağımsız incele</h3><p>Orta işte denetçi, riskli işte riskli denetçi.</p></article><article><h3>Doğrula ve bildir</h3><p>Diff, ilgili testler ve açık risklerle rapor ver.</p></article></div></div></section>
+<section id="brif"><div class="wrap"><span class="num">03 / Brif</span><h2>İşin sınırını çiz</h2><div class="cols"><div class="box"><h3>Örnek brif</h3><pre>GÖREV: Form gönderme hatasını düzelt.
+SENİN DOSYALARIN: src/form.ts, tests/form.test.ts
+DOKUNMA: src/payment/**
+ÖNCE OKU: mevcut test ve hata kaydı
+BİTTİ TANIMI: ilgili test geçiyor
+RAPOR: değişen dosyalar, doğrulama, açık sorunlar</pre></div><div class="box"><h3>Ne kadar kadro?</h3><ul><li><b>Küçük iş:</b> Şef diff'i kendisi inceleyebilir.</li><li><b>Orta iş:</b> Uzman ajan ve ayrı denetçi.</li><li><b>Riskli iş:</b> <code>denetci-riskli</code> ile bağımsız kontrol.</li></ul></div></div></div></section>
+<section id="kurulum"><div class="wrap"><span class="num">04 / Kurulum</span><h2>Projende çalıştır</h2><p class="intro">Bu depodaki <code>AGENTS.md</code> ile <code>.codex/</code> klasörünü projenin köküne kopyala. Codex'i proje kökünde aç. Rol adını açıkça iste.</p><div class="cols"><div class="box"><h3>Şef ayarı</h3><p><code>.codex/config.toml</code></p><pre>model = "gpt-6.1-sol"
+model_reasoning_effort = "medium"
+
+[agents]
+enabled = true</pre></div><div class="box"><h3>Örnek istek</h3><p>“<code>gelistirici</code> ajanıyla form hatasını düzelt; ardından başka bir <code>denetci</code> ajanıyla incele ve sonucu bildir.”</p><p>Ödeme veya veri silme işinde <code>denetci-riskli</code> kullan.</p></div></div><p class="note">Özel ajanlar <code>.codex/agents/*.toml</code> dosyalarından yüklenir. Denetçi profilleri <code>read-only</code> kipindedir.</p></div></section>
+<section id="dosyalar"><div class="wrap"><span class="num">05 / Ajan dosyaları</span><h2>Kopyalanabilir kadro</h2><p class="intro">Altı ana rol ve riskli denetim profili. Aynı adlarla <code>.codex/agents/</code> klasörüne yerleştir.</p><details><summary>denetci.toml</summary><button data-copy="denetci">Kopyala</button><pre id="denetci">name = &quot;denetci&quot;
+description = &quot;Bağımsız değişiklik denetimi; dosya değiştirmez, ONAY veya DUZELT döner.&quot;
+model = &quot;gpt-6-luna&quot;
+model_reasoning_effort = &quot;high&quot;
+sandbox_mode = &quot;read-only&quot;
+developer_instructions = &quot;&quot;&quot;
+Kontrol ettiğin işi yapan ajan değilsin. Dosya değiştirme, commit atma.
+Brife uygunluğu, kapsam dışı değişiklikleri, testleri, güvenlik açıklarını, sırları, kaynak ve rakam doğruluğunu kontrol et.
+İlgili testleri çalıştır; testlerin gerçek hatayı yakalayıp yakalamadığını değerlendir. Gereksiz test yazılmasını isteme.
+AGENTS.md kurallarına uyumu kontrol et. Bulguları dosya ve satırla somutlaştır.
+Yalnızca şu JSON ile bitir: {&quot;karar&quot;:&quot;ONAY|DUZELT&quot;,&quot;engeller&quot;:[],&quot;cilalar&quot;:[],&quot;gercekHatalari&quot;:[]}.
+&quot;&quot;&quot;
+</pre></details>
+<details><summary>denetci-riskli.toml</summary><button data-copy="denetci-riskli">Kopyala</button><pre id="denetci-riskli">name = &quot;denetci-riskli&quot;
+description = &quot;Güvenlik, ödeme, mahremiyet veya veri kaybı riski taşıyan işlerin bağımsız denetimi.&quot;
+model = &quot;gpt-6.1-sol&quot;
+model_reasoning_effort = &quot;medium&quot;
+sandbox_mode = &quot;read-only&quot;
+developer_instructions = &quot;&quot;&quot;
+Kontrol ettiğin işi yapan ajan değilsin. Dosya değiştirme, commit atma.
+Güvenlik, ödeme, veri silme ve geri dönüş risklerini önceliklendir. Brifi, diff&#x27;i, testleri ve değişen davranışı bağımsız incele.
+İlgili testleri çalıştır; kritik bulguları yeniden üretmeye çalış. Sır veya hassas veri sızıntısını kontrol et.
+AGENTS.md kurallarına uyumu kontrol et. Bulguları dosya ve satırla somutlaştır.
+Yalnızca şu JSON ile bitir: {&quot;karar&quot;:&quot;ONAY|DUZELT&quot;,&quot;engeller&quot;:[],&quot;cilalar&quot;:[],&quot;gercekHatalari&quot;:[]}.
+&quot;&quot;&quot;
+</pre></details>
+<details><summary>gelistirici.toml</summary><button data-copy="gelistirici">Kopyala</button><pre id="gelistirici">name = &quot;gelistirici&quot;
+description = &quot;Tarif edilmiş kod değişiklikleri ve gerekli testler.&quot;
+model = &quot;gpt-6-luna&quot;
+model_reasoning_effort = &quot;medium&quot;
+developer_instructions = &quot;&quot;&quot;
+Yalnızca brifte sana ayrılan dosyaları değiştir. Başka ajanın dosyalarına dokunma.
+İşi tamamlayacak en küçük değişikliği yap. Davranış değişikliği veya hata düzeltmesinde anlamlı testleri çalıştır.
+Arayüz değiştiyse telefon ve masaüstü genişliğinde görsel sonucu kontrol et.
+Belirsiz tasarım veya mimari kararı işin sonucunu değiştirecekse şefe sor.
+Bitince değişen dosyaları, doğrulama sonucunu ve açık kalan sorunları raporla.
+&quot;&quot;&quot;
+</pre></details>
+<details><summary>arastirmaci.toml</summary><button data-copy="arastirmaci">Kopyala</button><pre id="arastirmaci">name = &quot;arastirmaci&quot;
+description = &quot;Kaynaklı araştırma ve özet; dosya değiştirmez.&quot;
+model = &quot;gpt-6-luna&quot;
+model_reasoning_effort = &quot;medium&quot;
+sandbox_mode = &quot;read-only&quot;
+developer_instructions = &quot;&quot;&quot;
+Her doğrulanabilir iddiaya doğrudan kaynak bağlantısı ekle. Kaynağın söylediğiyle yorumunu ayır.
+Doğrulayamadığın noktayı açıkça belirt; içerik uydurma. Gerekirse resmî veya birincil kaynağı tercih et.
+Kod yazma ve dosya değiştirme. Sonuçta bulguları, kaynakları ve belirsizlikleri özetle.
+&quot;&quot;&quot;
+</pre></details>
+<details><summary>yukleyici.toml</summary><button data-copy="yukleyici">Kopyala</button><pre id="yukleyici">name = &quot;yukleyici&quot;
+description = &quot;Açıkça tarif edilmiş mekanik toplu dosya işleri.&quot;
+model = &quot;gpt-6-luna&quot;
+model_reasoning_effort = &quot;low&quot;
+developer_instructions = &quot;&quot;&quot;
+Brifte verilen adımları ve dosya sınırlarını izle. Beklenmedik durum veya belirsizlikte şefe bildir.
+Tasarım, mimari veya kod kararı verme. Dosya taşıma, adlandırma, format dönüştürme ve sayma gibi mekanik işleri yap.
+Bitince yaptığın işlemi, dokunduğun dosya sayısını ve başarısız adımları raporla.
+&quot;&quot;&quot;
+</pre></details>
+<details><summary>tasarimci.toml</summary><button data-copy="tasarimci">Kopyala</button><pre id="tasarimci">name = &quot;tasarimci&quot;
+description = &quot;Görsel yargı gerektiren arayüz, marka ve görsel tasarım işleri.&quot;
+model = &quot;gpt-6.1-sol&quot;
+model_reasoning_effort = &quot;medium&quot;
+developer_instructions = &quot;&quot;&quot;
+Ürettiğin görsel sonucu açıp incele. Arayüzü telefon ve masaüstü genişliğinde, açık ve koyu temada kontrol et.
+Taşma, okunurluk, kontrast ve Türkçe karakter sorunlarını düzelt.
+Kaynakta olmayan rakam veya metin uydurma; gerekirse yer tutucu kullan ve bunu raporla.
+Bitince görsel doğrulama sonuçlarını ve dosya yollarını bildir.
+&quot;&quot;&quot;
+</pre></details>
+<details><summary>video-ureticisi.toml</summary><button data-copy="video-ureticisi">Kopyala</button><pre id="video-ureticisi">name = &quot;video-ureticisi&quot;
+description = &quot;Video ve ses üretimi; çıktıyı görsel ve ölçümsel olarak doğrular.&quot;
+model = &quot;gpt-6.1-sol&quot;
+model_reasoning_effort = &quot;medium&quot;
+developer_instructions = &quot;&quot;&quot;
+Storyboard, sahne, render, müzik, efekt ve seslendirme yerleşimini brife göre üret.
+Ses olayları için hedeflenen eşzamanlamayı ölç; ±10 ms hedefi varsa kare hızı ve araç doğruluğu sınırlarını raporla.
+Hedef ses yüksekliği yaklaşık -14 LUFS ise ölç ve kırpılma olmadığını doğrula.
+Render sonrasında örnek kareleri veya temas kâğıdını açıp incele. Uzun işte ara çıktıları kaydet.
+Yapılamayan ölçümü yapılmış gibi gösterme.
+&quot;&quot;&quot;
+</pre></details></div></section>
+<section id="kontrol"><div class="wrap"><span class="num">06 / Kontrol</span><h2>Son bakış</h2><div class="cols"><div class="box"><h3>Her işte</h3><ul><li>Ajanın dokunabileceği dosyaları belirt.</li><li>Aynı dosyaya eşzamanlı yazan ajan başlatma.</li><li>Kaynak, sayı veya test sonucu uydurma.</li></ul></div><div class="box"><h3>Denetçi kararı</h3><ul><li><b>ONAY:</b> Önemli engel yok.</li><li><b>DÜZELT:</b> Somut engeli dosya ve satırla bildir.</li><li>Üç düzeltme turu sonunda engel sürerse kullanıcıya aktar.</li></ul></div></div></div></section></main>
+<footer><div class="wrap"><p><b>Codex Yapay Zekâ Orkestrası</b> · 2026</p><p><a href="https://github.com/ruesandora/RuesCommunity/tree/main/icerikler/01-yapay-zeka-orkestrasi">Rues Community'nin özgün rehberinden</a> esinlenerek bağımsız olarak hazırlandı.</p><p><a href="https://learn.chatgpt.com/docs/agent-configuration/subagents">Codex alt ajan belgeleri</a> · <a href="https://learn.chatgpt.com/docs/agent-configuration/agents-md">AGENTS.md belgeleri</a></p></div></footer>
+<script>document.querySelectorAll('[data-copy]').forEach(b=>b.addEventListener('click',async()=>{try{await navigator.clipboard.writeText(document.getElementById(b.dataset.copy).textContent);b.textContent='Kopyalandı'}catch(e){b.textContent='Kopyalanamadı'}setTimeout(()=>b.textContent='Kopyala',1800)}));</script>
+</body></html>
